@@ -1,0 +1,113 @@
+/* General Styles */
+.image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Calendar Container */
+#calendar-container {
+    width: 90%;
+    max-width: 800px;
+    color: rgb(91, 86, 17);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(249, 89, 209, 0.826);
+    background-color: rgba(249, 241, 99, 0);
+}
+
+#month-year {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: rgb(255, 250, 181);
+}
+
+#days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Day Boxes */
+.day-box {
+    border: 1px solid rgb(199, 110, 177);
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.day-box:hover {
+    background-color: rgba(199, 110, 177, 0.1);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.active-day {
+    background-color: rgba(199, 110, 177, 0.3);
+    border: 2px solid rgb(199, 110, 177);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #ffd633;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover,
+.save-button:hover {
+    background-color: #ffd633;
+}
+
+#prev-btn,
+#next-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: rgb(255, 250, 181);
+    cursor: pointer;
+    outline: none;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    color: rgb(199, 110, 177);
+}
+
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+.btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 204, 51, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #calendar-container {
+        width: 95%;
+    }
+}

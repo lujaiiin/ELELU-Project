@@ -1,0 +1,85 @@
+/* General Styles */
+body {
+    background-color: #add8e6;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #F3ABB6;
+}
+
+/* Writable Area */
+.writable-area {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(255, 253, 253, 0.15);
+    overflow-x: auto;
+    background: repeating-linear-gradient(to bottom, #add8e6 0%, #add8e6 calc(50% - 1px), #87ceeb calc(50% - 1px), #87ceeb 50%);
+    text-align: left;
+}
+
+/* Input Fields */
+textarea.form-control, input[type="text"] {
+    padding: 10px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
+    background-color: #add8e6;
+}
+
+/* Buttons */
+.btn-primary, .save-button {
+    background-color: #C68A94;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover, .save-button:hover {
+    background-color: #F3ABB6;
+}
+
+/* Textarea Styling */
+textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 8;
+    padding: 20px;
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom, #add8e6 1px, transparent 1px), linear-gradient(to bottom, transparent 1px, #add8e6 1px);
+    background-size: 100% 2px;
+    background-attachment: local;
+    height: 77vh;
+    resize: none;
+    overflow-y: scroll;
+}
+
+/* Publish Form */
+#publishForm {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.204);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    z-index: 9999;
+    display: none;
+}
+
+#publishForm.active {
+    display: block !important;
+}
+
+#publishForm textarea.form-control {
+    height: auto;
+    min-height: 80px;
+    max-height: 100px;
+    overflow-y: auto;
+}

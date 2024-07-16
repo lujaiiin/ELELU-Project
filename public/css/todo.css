@@ -1,0 +1,500 @@
+.image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    height: 2500px;
+  }
+ 
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font: bold;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Remove horizontal scrollbar */
+}
+
+.table-container {
+    overflow-x: auto;
+    border: 5px solid #eee;
+    padding: 80px;
+    max-width: 1000px;
+    margin: 0 20px; /* Adjusted for more leftward positioning */
+    border-radius: 50px;
+    box-shadow: 6px 4px 8px rgba(1, 106, 253, 0.1);
+    width: 80%;
+    float: left;
+    margin-left: -270px;
+}
+
+@media (min-width: 768px) {
+    .table-container {
+        width: 50%;
+    }
+}
+
+.row {
+    margin-top: 30px;
+}
+
+h2 {
+    color: #D9BB46;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    margin-right: 10px;
+    background-color: #5DE2E7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #D9BB46;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.countdown {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 14px;
+    padding: 10px 15px;
+    background: linear-gradient(to right, #5DE2E7, #ffd633);
+    color: rgb(10, 9, 9);
+    border-radius: 25px;
+    display: inline-block;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@media (min-width: 768px) {
+    .countdown {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+}
+
+.btn {
+    --b: 3px; /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #ffd633;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: #333;
+    --_p: var(--s);
+    background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #5DE2E7;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.btn:active {
+    background: var(--color);
+    color: #fff;
+}
+
+.table-container::after {
+    content: '';
+    position: absolute;
+    top: -2px; 
+    left: -2px; 
+    right: -2px; /* Adjust based on your design */
+    bottom: -2px; /* Adjust based on your design */
+    border: 2px solid #5DE2E7; /* Your preferred color */
+    z-index: -1;
+    opacity: 0.5;
+    animation: pulseBorder 2s infinite;
+}
+
+@keyframes pulseBorder {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.table-container:hover {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-5px); }
+}
+
+.checkbox-wrapper-11 {
+    --text: #414856;
+    --check: #ffcc00;
+    --disabled: #C3C8DE;
+    --border-radius: 10px;
+    border-radius: var(--border-radius);
+    position: relative;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+}
+
+.checkbox-wrapper-11 label {
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    transition: color 0.3s ease;
+}
+
+.checkbox-wrapper-11 label::before,
+.checkbox-wrapper-11 label::after {
+    content: "";
+    position: absolute;
+}
+
+.checkbox-wrapper-11 label::before {
+    height: 2px;
+    width: 8px;
+    left: -27px;
+    background: var(--check);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+.checkbox-wrapper-11 label:after {
+    height: 4px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+}
+
+.checkbox-wrapper-11 input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: var(--background);
+    display: grid;
+    align-items: center;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]::before,
+.checkbox-wrapper-11 input[type=checkbox]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: var(--check);
+    border-radius: 2px;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked::before {
+    animation: check-01-11 0.4s ease forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked::after {
+    animation: check-02-11 0.4s ease forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked + label {
+    color: var(--disabled);
+    animation: move-11 0.3s ease 0.1s forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked + label::before {
+    background: var(--disabled);
+    animation: slice-11 0.4s ease forwards;
+}
+
+.checkbox-wrapper-11 input[type=checkbox]:checked + label::after {
+    animation: firework-11 0.5s ease forwards 0.1s;
+}
+
+@keyframes move-11 {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+    100% {
+        padding-right: 4px;
+    }
+}
+
+@keyframes slice-11 {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
+    }
+}
+
+@keyframes check-01-11 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes check-02-11 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+    100% {
+        width: 10px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes firework-11 {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+    }
+}
+
+
+/* Keyframes for sliding down and fading out */
+@keyframes slideDownFadeOut {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+#createTaskForm {
+    display: none; /* Ensure the form is initially hidden */
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    background-color: #ffffff37; /* White background for the form */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 80%; /* Set a maximum width */
+    max-width: 600px; /* Increased maximum width for more space */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    z-index: 1000; /* Ensure it's above other content */
+    overflow: auto; /* Enable scrolling if the content exceeds the form's height */
+}
+
+.overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Ensure it's below the form but above other content */
+}
+
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* General form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* Adjust based on your preference */
+    margin: auto;
+}
+
+/* Styling for each form group */
+.form-group {
+    margin-bottom: 1rem; /* Adds space between form groups */
+}
+
+label {
+    display: block; /* Makes label appear above input */
+    margin-bottom: 0.5rem; /* Adds space under the label */
+}
+
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+    border-radius: 0.25rem; /* Rounded corners */
+    border: 1px solid rgba(206, 212, 218, 0.585); /* Light grey border */
+    padding: 0.375rem 0.75rem; /* Padding inside inputs */
+    font-size: 1rem; /* Standard font size */
+}
+
+/* Styling for buttons */
+.btn {
+     /* Bootstrap primary color */
+     /* Text color */
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    border: none; /* Removes border */
+    padding: 0.5rem 1rem; /* Padding around text */
+    font-size: 1rem; /* Standard font size */
+    margin-top: 1rem; /* Adds space above the buttons */
+    border-radius: 0.25rem; /* Rounded corners */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Slightly dimmed when hovered over */
+}
+
+
+
+/* Styling for the form container when hidden */
+#createTaskForm {
+    background-color: #f8f9fa3d; /* Light grey background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.473); /* Subtle shadow */
+}
+
+
+#publishForm {
+    display: none;
+    position: fixed; /* Or 'absolute' if you prefer */
+    top: 20%; /* Adjust based on your layout needs */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 80%; /* Adjust based on your design */
+    max-width: 600px; /* Maximum width */
+    background-color: rgba(255, 255, 255, 0.204); /* Background color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds shadow for depth */
+    padding: 20px; /* Padding around the form contents */
+    z-index: 9999; /* High z-index to ensure it's above other content */
+    display: none; /* Initially hidden */
+        width: 500px; /* Default width */
+        height: 500px; /* Default height */
+        border: 1px solid #ccc;
+        overflow: auto; /* Allows scrolling if content exceeds the form's dimensions */
+        resize: none; /* Disables the default browser resize handles */
+
+    
+}
+
+/* When the form is active, make it visible */
+#publishForm.active {
+    display: block !important; /* Override the initial 'display: none' */
+}
+
+#publishForm textarea.form-control {
+    height: auto; /* Adjusts height based on content */
+    min-height: 80px; /* Sets minimum height */
+    max-height: 100px; /* Sets maximum height */
+    overflow-y: auto; /* Enables scrolling if content exceeds max-height */
+}
+
+
